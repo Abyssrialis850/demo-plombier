@@ -1,0 +1,5 @@
+---
+import Icon from './Icon.astro';
+const steps=[['Premier échange','Vous nous racontez votre besoin. Nous posons les bonnes questions.'],['Diagnostic ou visite','Nous regardons l’existant, les contraintes et les possibilités.'],['Proposition','Vous recevez un devis détaillé et un calendrier à valider ensemble.'],['Intervention','Nous réalisons, vérifions et vous expliquons votre installation.']];
+---
+<section class="process section-space"><div class="container process-layout"><div data-reveal><p class="eyebrow">De l’idée au quotidien</p><h2>Simple, à<br /><em>chaque étape.</em></h2><a class="text-link" href="/contact?mode=rdv">Planifier une visite <Icon /></a></div><ol class="process-list">{steps.map(([title,description],i) => <li data-reveal><span>0{i+1}</span><div><h3>{title}</h3><p>{description}</p></div><span class="process-point" aria-hidden="true"></span></li>)}</ol></div></section>

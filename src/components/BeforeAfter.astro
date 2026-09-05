@@ -1,0 +1,17 @@
+---
+import { Picture } from 'astro:assets';
+import { images } from '../data/images';
+---
+<section class="before-after dark-section section-space">
+  <div class="container">
+    <div class="section-heading" data-reveal><div><p class="eyebrow"><span class="section-number">04 /</span> Un nouveau regard</p><h2>Transformer sans<br /><em>tout bouleverser.</em></h2></div><div><p>Une salle de bain à Cusset.<br />Le même espace, une tout autre sensation.</p><span class="small-note">Projection de rénovation · Illustration avant / après</span></div></div>
+    <div class="comparison" data-comparison style="--position: 50%">
+      <Picture src={images.bathroom} alt="Après : salle de bain en travertin, meuble en noyer et baignoire îlot" fallbackFormat="webp" formats={['avif','webp']} widths={[640,960,1440]} sizes="90vw" loading="lazy" class="comparison-after" />
+      <div class="comparison-before"><Picture src={images.before} alt="Avant : salle de bain vieillissante dans le même espace" fallbackFormat="webp" formats={['avif','webp']} widths={[640,960,1440]} sizes="90vw" loading="lazy" /></div>
+      <span class="comparison-label before-label">Avant</span><span class="comparison-label after-label">Après</span>
+      <div class="comparison-divider" aria-hidden="true"><span>‹<i></i>›</span></div>
+      <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Comparer la salle de bain avant et après" aria-valuetext="50 % avant, 50 % après" />
+    </div>
+    <div class="comparison-foot"><span>Glissez pour découvrir la transformation</span><span>← Avant <i></i> Après →</span></div>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+---
+import { Picture } from 'astro:assets';
+import bathroom from '../assets/bathroom.png';
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+<section class="final-cta"><Picture src={bathroom} alt="" fallbackFormat="webp" formats={['avif','webp']} widths={[640,960,1440,1920]} sizes="100vw" loading="lazy" /><div class="final-shade"></div><div class="container final-content" data-reveal><p class="eyebrow">Une maison. Votre confort. Notre exigence.</p><h2>Un projet ?<br /><em>Parlons-en simplement.</em></h2><div class="final-actions"><a class="button" href="/contact?mode=devis">Demander un devis <Icon /></a><a class="text-link light-link" href="/contact?mode=rdv">Prendre rendez-vous <Icon /></a></div><a class="final-phone" href={site.phoneHref}>Ou appeler le {site.phone}</a></div></section>

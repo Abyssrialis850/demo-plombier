@@ -1,0 +1,22 @@
+---
+import { Picture } from 'astro:assets';
+import bathroom from '../assets/bathroom.png';
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+<section class="hero" aria-labelledby="hero-heading">
+  <Picture src={bathroom} alt="Une salle de bain contemporaine en pierre naturelle, baignée de lumière" fallbackFormat="webp" formats={['avif','webp']} widths={[640,960,1440,1536]} sizes="100vw" loading="eager" fetchpriority="high" quality={78} class="hero-image" />
+  <div class="hero-shade"></div>
+  <div class="hero-content container">
+    <p class="eyebrow hero-eyebrow"><span></span> Plomberie · Chauffage · Vichy</p>
+    <h1 id="hero-heading">Le confort,<br />maîtrisé jusque<br />dans les <em>détails.</em></h1>
+    <p class="hero-description">Plomberie, chauffage et rénovation réalisés<br class="desktop-break" /> avec exigence à Vichy et dans ses environs.</p>
+    <div class="hero-actions"><a class="button" href="/contact?mode=devis">Demander un devis <Icon /></a><a class="text-link light-link" href="/contact?mode=rdv">Prendre rendez-vous <Icon /></a></div>
+    <a class="hero-phone" href={site.phoneHref}><Icon name="phone" /> {site.phone} <span>· Parlons de votre projet</span></a>
+  </div>
+  <div class="hero-bottom container">
+    <a class="hero-rating" href="#avis"><span class="stars" aria-label="5 étoiles">{[1,2,3,4,5].map(()=><Icon name="star" />)}</span><span><strong>4,9/5</strong> <span>· 67 avis clients*</span></span></a>
+    <a class="scroll-cue" href="#approche">L’exigence, par nature <span>↓</span></a>
+    <span class="hero-caption">01 / L’art de se sentir chez soi.</span>
+  </div>
+</section>

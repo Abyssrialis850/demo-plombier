@@ -1,0 +1,8 @@
+---
+interface Props { large?: boolean; }
+const { large = false } = Astro.props;
+---
+<a href="/" class:list={['brand', { 'brand-large': large }]} aria-label="Maison Ardent, accueil">
+  <svg class="brand-mark" viewBox="0 0 40 48" fill="none" aria-hidden="true"><path d="M5 42V20L20 5l15 15v22M12 42V23l8-8 8 8v19M20 15v27M1 42h38" stroke="currentColor" stroke-width="1.25" /><path d="M17 32c0-3 3-6 3-6s4 4 4 7a4 4 0 0 1-8 0" stroke="currentColor" stroke-width="1" /></svg>
+  <span><span class="brand-name">MAISON ARDENT</span><span class="brand-subtitle">Plomberie & Confort Thermique</span></span>
+</a>

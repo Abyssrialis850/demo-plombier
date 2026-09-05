@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Booking from '../components/Booking.astro';
+import FAQ from '../components/FAQ.astro';
+import { site } from '../data/site';
+---
+<Layout title="Votre projet — Devis & rendez-vous à Vichy | Maison Ardent" description="Un projet de plomberie, chauffage ou salle de bain à Vichy ? Découvrez le parcours de devis et de prise de rendez-vous Maison Ardent. Démonstration sans envoi.">
+  <section class="page-intro contact-intro"><div class="container"><p class="eyebrow"><a href="/">Maison Ardent</a><span>/</span> Votre projet</p><div class="page-intro-row"><h1>Un projet ?<br /><em>Parlons-en simplement.</em></h1><p>Votre maison a son histoire.<br />Racontez-nous la suite.</p></div></div></section>
+  <Booking contact />
+  <section class="contact-details" aria-label="Coordonnées de démonstration"><div class="container"><div><h2>De vive voix</h2><a href={site.phoneHref}>{site.phone}</a><p>Numéro fictif, à remplacer avant toute mise en service.</p></div><div><h2>Par écrit</h2><a href={`mailto:${site.email}`}>{site.email}</a><p>Adresse de démonstration, sans réception d’emails.</p></div><div><h2>Sur votre secteur</h2><a href="/#atelier">Vichy & ses alentours</a><p>Du lundi au vendredi, 8 h à 18 h.<br />Horaires fictifs pour cette présentation.</p></div></div></section>
+  <FAQ />
+</Layout>

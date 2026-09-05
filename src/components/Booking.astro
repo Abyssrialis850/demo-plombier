@@ -1,0 +1,44 @@
+---
+import Icon from './Icon.astro';
+interface Props { contact?: boolean; }
+const { contact = false } = Astro.props;
+---
+<section id="rendez-vous" class:list={['booking-section', 'section-space', { 'contact-booking': contact }]}>
+  <div class="container booking-layout">
+    <div class="booking-intro" data-reveal>
+      <p class="eyebrow"><span class="section-number">06 /</span> Faisons connaissance</p>
+      <h2>Prenons le temps<br />de <em>votre projet.</em></h2>
+      <p>Un dépannage, une idée précise ou simplement des questions ? Commençons par un échange.</p>
+      <div class="booking-note"><span class="note-rule"></span><p>Décrivez votre besoin en quelques mots.<br />Nous pourrons ensuite envisager la suite,<br />en toute simplicité.</p></div>
+      <p class="booking-demo"><span class="demo-dot"></span> Vous explorez une démonstration.<br />Aucune demande n’est envoyée. Aucun créneau n’est réellement réservé.</p>
+    </div>
+    <div class="booking-card" data-booking>
+      <div class="booking-tabs" role="group" aria-label="Type de prise de contact"><button type="button" data-mode="rdv" class="is-active" aria-pressed="true">Un rendez-vous <span>↗</span></button><button type="button" data-mode="devis" aria-pressed="false">Un devis <span>↗</span></button></div>
+      <div class="booking-progress" aria-label="Progression"><span class="is-active" data-progress="1"><b>01</b> Votre besoin</span><i></i><span data-progress="2"><b>02</b> Vos coordonnées</span></div>
+      <form data-contact-form>
+        <input type="hidden" name="mode" value="rdv" />
+        <fieldset data-step="1" disabled>
+          <legend class="sr-only">Votre besoin et votre créneau</legend>
+          <label class="field">Que pouvons-nous faire pour vous ? <span class="required-mark">*</span><select name="service" required><option value="">Choisissez votre demande</option><option value="depannage">Dépannage plomberie</option><option value="entretien">Entretien chaudière</option><option value="salle-de-bain">Projet salle de bain</option><option value="chauffage">Chauffage</option><option value="chauffe-eau">Remplacement chauffe-eau</option><option value="plomberie">Projet plomberie</option><option value="autre">Autre demande</option></select></label>
+          <div data-rdv-fields>
+            <fieldset class="date-fieldset"><legend>Quel jour vous conviendrait ? <span class="required-mark">*</span></legend><div class="date-picker" data-dates></div><span class="field-hint">Les prochains jours ouvrés · Calendrier simulé</span></fieldset>
+            <fieldset class="slot-fieldset"><legend>Votre préférence <span class="required-mark">*</span></legend><div class="slot-picker"><label><input type="radio" name="slot" value="Matin · 9 h – 12 h" required /><span>Matin <small>9 h – 12 h</small></span></label><label><input type="radio" name="slot" value="Après-midi · 14 h – 17 h" required /><span>Après-midi <small>14 h – 17 h</small></span></label></div></fieldset>
+          </div>
+          <div data-devis-fields hidden><label class="field">Budget indicatif <span class="field-optional">(facultatif)</span><select name="budget" disabled><option value="">À définir ensemble</option><option>Moins de 2 000 €</option><option>2 000 à 5 000 €</option><option>5 000 à 15 000 €</option><option>Plus de 15 000 €</option></select></label><p class="field-hint quote-hint">Une estimation suffit. Les choix techniques et le périmètre seront étudiés ensemble.</p></div>
+          <button class="button button-dark button-full" type="button" data-next>Continuer <Icon /></button>
+        </fieldset>
+        <fieldset data-step="2" hidden disabled>
+          <legend class="sr-only">Vos coordonnées</legend>
+          <div class="form-grid"><label class="field">Votre nom <span class="required-mark">*</span><input name="name" autocomplete="name" required placeholder="Prénom et nom" maxlength="100" /></label><label class="field">Téléphone <span class="required-mark">*</span><input name="phone" type="tel" autocomplete="tel" inputmode="tel" required pattern="[+0-9\(\) .\-]{10,22}" placeholder="06 00 00 00 00" title="Saisissez un numéro de téléphone de 10 à 22 caractères." /></label><label class="field">Email <span class="required-mark">*</span><input name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr" maxlength="150" /></label><label class="field">Commune <span class="required-mark">*</span><input name="city" autocomplete="address-level2" required placeholder="Vichy, Cusset…" maxlength="100" /></label></div>
+          <label class="field">Quelques mots sur votre projet <span class="required-mark">*</span><textarea name="message" rows="3" required minlength="10" maxlength="3000" placeholder="Votre besoin, l’équipement concerné, ce que vous aimeriez améliorer…"></textarea></label>
+          <label class="file-field">Joindre des photos <span>(facultatif)</span><input type="file" name="photos" accept="image/jpeg,image/png,image/webp" multiple aria-describedby="photo-hint" /></label><p id="photo-hint" class="field-hint" data-photo-status>3 photos maximum · JPG, PNG ou WebP · 5 Mo chacune. Elles restent sur votre appareil.</p>
+          <button class="photo-clear" type="button" data-photo-clear hidden>Retirer les photos ×</button><label class="consent"><input type="checkbox" name="consent" required /><span>Je comprends qu’il s’agit d’une démonstration : aucune demande ne sera envoyée. <a href="/confidentialite">Confidentialité</a></span></label>
+          <div class="form-actions"><button class="form-back" type="button" data-back>← Retour</button><button class="button button-dark" type="submit">Valider la simulation <Icon /></button></div>
+        </fieldset>
+        <p class="form-microcopy" data-form-microcopy>* Champs nécessaires · Sans envoi ni stockage des données.</p>
+      </form>
+      <div class="booking-success" data-success hidden tabindex="-1"><span class="success-icon"><Icon name="check" /></span><p class="eyebrow">Démonstration terminée</p><h3>Tout commence<br />par <em>un échange.</em></h3><p>Votre simulation est prête.</p><div class="success-summary" data-summary></div><p class="success-disclaimer">Aucune demande n’a été envoyée et aucun créneau n’a été réservé. Les informations saisies ne sont pas conservées.</p><button type="button" class="text-link" data-restart>Faire une nouvelle simulation <Icon /></button></div>
+      <noscript><p class="noscript-message">Activez JavaScript pour essayer le formulaire de démonstration. Aucun service réel n’est proposé sur ce site.</p></noscript>
+    </div>
+  </div>
+</section>

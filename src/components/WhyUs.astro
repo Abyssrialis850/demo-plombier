@@ -1,0 +1,17 @@
+---
+import { Picture } from 'astro:assets';
+import { images } from '../data/images';
+const benefits = [
+  ['Un devis clair','Les prestations sont détaillées. Les choix sont expliqués. Vous savez ce qui est prévu avant que le chantier commence.'],
+  ['Un interlocuteur unique','Une personne qui connaît votre maison, suit votre projet et répond à vos questions, du premier échange à la réception.'],
+  ['Une intervention soignée','Sols protégés, raccordements précis, espace remis en ordre. Votre intérieur mérite autant d’attention que notre installation.'],
+  ['Des délais convenus','Un calendrier discuté ensemble et une information simple si un ajustement s’impose. Vous gardez de la visibilité.'],
+];
+---
+<section id="atelier" class="why-us section-space">
+  <div class="container">
+    <div class="why-heading" data-reveal><p class="eyebrow"><span class="section-number">05 /</span> L’atelier Maison Ardent</p><h2>Un service clair,<br />du premier appel<br />à la dernière <em>finition.</em></h2><p>Bien travailler, c’est aussi bien vous accompagner. Notre exigence se mesure dans les gestes, mais aussi dans la relation.</p></div>
+    <div class="atelier-image" data-reveal><Picture src={images.workshop} alt="Le soin du geste : réglage d’une installation thermique par un artisan" widths={[640,960,1440]} sizes="90vw" fallbackFormat="webp" formats={['avif','webp']} loading="lazy" /><span>Le travail bien fait se reconnaît aussi à ce qu’on ne voit pas.</span></div>
+    <div class="benefits-grid">{benefits.map(([title,description],i) => <article data-reveal><span class="section-number">0{i+1}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
+  </div>
+</section>

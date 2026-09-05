@@ -1,0 +1,5 @@
+---
+import { faqs } from '../data/site';
+import Icon from './Icon.astro';
+---
+<section class="faq section-space"><div class="container faq-layout"><div data-reveal><p class="eyebrow">Avant de se rencontrer</p><h2>Les bonnes<br /><em>questions.</em></h2><p>Un projet serein commence<br />par des réponses claires.</p><a class="text-link" href="/contact">Une autre question ? <Icon /></a></div><div class="faq-list">{faqs.map(faq=><details name="faq"><summary>{faq.q}<Icon name="plus" /></summary><p>{faq.a}</p></details>)}</div></div></section>

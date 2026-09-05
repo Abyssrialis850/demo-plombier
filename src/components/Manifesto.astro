@@ -1,0 +1,19 @@
+---
+import { Picture } from 'astro:assets';
+import detail from '../assets/detail.png';
+import Icon from './Icon.astro';
+---
+<section id="approche" class="manifesto section-space">
+  <div class="container manifesto-grid">
+    <div class="manifesto-copy" data-reveal>
+      <p class="eyebrow"><span class="section-number">01 /</span> Notre approche</p>
+      <h2>Le confort ne devrait<br />jamais être<br /><em>un détail.</em></h2>
+      <div class="manifesto-body"><p>Nous concevons et réalisons des installations fiables, durables et pensées pour votre quotidien.</p><p>Une température juste. L’eau, là où il faut. Des matières qui traversent les années. Et ce sentiment simple : être bien chez soi.</p><a href="#atelier" class="text-link">L’esprit Maison Ardent <Icon /></a></div>
+    </div>
+    <figure class="manifesto-figure" data-reveal>
+      <div class="image-wrap"><Picture src={detail} alt="L’eau s’écoule d’un robinet en cuivre dans une vasque en pierre naturelle" widths={[480,720,960]} sizes="(max-width: 700px) 90vw, 42vw" fallbackFormat="webp" formats={['avif','webp']} loading="lazy" /></div>
+      <figcaption><span>Les matières changent. L’exigence reste.</span><span>MA.</span></figcaption>
+      <div class="image-seal" aria-hidden="true"><span>LE SENS</span><em>du détail</em><span>MAISON ARDENT</span></div>
+    </figure>
+  </div>
+</section>

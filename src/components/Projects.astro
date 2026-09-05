@@ -1,0 +1,33 @@
+---
+import { Picture, getImage } from 'astro:assets';
+import { projects } from '../data/site';
+import { images } from '../data/images';
+import Icon from './Icon.astro';
+interface Props { full?: boolean; }
+const { full = false } = Astro.props;
+const fullImages = await Promise.all(projects.map(p => getImage({src: images[p.image], width: 1536, format:'webp', quality:85})));
+---
+<section class:list={['projects-section', 'section-space', { 'portfolio-full': full }]} id="realisations">
+  <div class="container">
+    {!full && <div class="section-heading" data-reveal><div><p class="eyebrow"><span class="section-number">03 /</span> Morceaux choisis</p><h2>Des projets qui parlent<br /><em>d’eux-mêmes.</em></h2></div><a class="text-link" href="/realisations">Toutes les réalisations <Icon /></a></div>}
+    {full && <div class="project-filters" role="group" aria-label="Filtrer les réalisations"><button class="filter-button is-active" aria-pressed="true" data-filter="all">Tous les projets <span>04</span></button><button class="filter-button" aria-pressed="false" data-filter="salle-de-bain">Salle de bain</button><button class="filter-button" aria-pressed="false" data-filter="chauffage">Chauffage</button><button class="filter-button" aria-pressed="false" data-filter="plomberie">Plomberie</button></div>}
+    <div class="projects-grid" data-project-grid>
+      {projects.map((project,i) => <article class={`project project-${i+1}`} data-category={project.category}>
+        <button class="project-photo" type="button" data-project-open data-image={fullImages[i].src} data-title={project.title} data-description={project.description} data-scope={project.scope} data-place={`${project.city} · ${project.type} · ${project.year}`} data-alt={project.alt} aria-label={`Voir le projet : ${project.title}, ${project.city}`}>
+          <Picture src={images[project.image]} alt={project.alt} widths={[480,720,960]} sizes="(max-width: 700px) 90vw, 43vw" fallbackFormat="webp" formats={['avif','webp']} loading="lazy" />
+          <span class="project-view">Découvrir le projet <Icon /></span><span class="project-index">0{i+1}</span>
+        </button>
+        <div class="project-meta"><span>{project.city} <span class="meta-dot">·</span> {project.type}</span><span>{project.year}</span></div>
+        <h3>{project.title}</h3>
+        {full && <p class="project-description">{project.description}</p>}
+      </article>)}
+    </div>
+    <p class="demo-inline projects-note">Projets d’illustration imaginés pour Maison Ardent. Photographies générées par IA.</p>
+    {full && <p class="sr-only" aria-live="polite" data-filter-status>4 projets affichés</p>}
+  </div>
+</section>
+<dialog class="project-dialog" aria-labelledby="project-dialog-title" data-project-dialog>
+  <button class="dialog-close icon-button" aria-label="Fermer le projet" type="button" data-project-close><Icon name="close" /></button>
+  <div class="dialog-picture"><img data-dialog-image alt="" width="1536" height="1024" /></div>
+  <div class="dialog-copy"><p class="eyebrow" data-dialog-place></p><h2 id="project-dialog-title"></h2><p data-dialog-description></p><p class="dialog-scope" data-dialog-scope></p><a class="text-link" href="/contact?mode=devis">Parlons de votre projet <Icon /></a><small>Réalisation fictive · Image d’illustration</small></div>
+</dialog>

@@ -1,0 +1,24 @@
+---
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+interface Props { overlay?: boolean; }
+const { overlay = false } = Astro.props;
+const links = [['Expertise','/#expertise'], ['Réalisations','/realisations'], ['L’atelier','/#atelier'], ['Avis','/#avis'], ['Contact','/contact']];
+---
+<header class:list={['site-header', { 'header-overlay': overlay }]} data-header>
+  <div class="header-inner">
+    <Brand />
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      {links.map(([label,href]) => <a href={href} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>)}
+    </nav>
+    <a class="button button-small header-appointment" href="/contact?mode=rdv">Prendre rendez-vous <Icon /></a>
+    <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-open><span>Menu</span><span class="menu-lines"><i></i><i></i></span></button>
+  </div>
+</header>
+<dialog id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
+  <div class="menu-top"><Brand /><button class="icon-button" type="button" aria-label="Fermer le menu" data-menu-close><Icon name="close" /></button></div>
+  <p class="eyebrow">Le sens du détail</p>
+  <nav aria-label="Navigation mobile">{links.map(([label,href],i) => <a href={href}><span class="menu-number">0{i+1}</span>{label}<Icon /></a>)}</nav>
+  <a class="button" href="/contact?mode=rdv">Prendre rendez-vous <Icon /></a>
+  <p class="menu-location">Vichy · Cusset · Bellerive-sur-Allier</p>
+</dialog>

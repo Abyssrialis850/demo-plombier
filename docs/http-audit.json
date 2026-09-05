@@ -1,0 +1,30 @@
+[
+  {
+    "Path": "/",
+    "Status": 200
+  },
+  {
+    "Path": "/realisations",
+    "Status": 200
+  },
+  {
+    "Path": "/contact?mode=devis",
+    "Status": 200
+  },
+  {
+    "Path": "/mentions-legales",
+    "Status": 200
+  },
+  {
+    "Path": "/confidentialite",
+    "Status": 200
+  },
+  {
+    "Path": "/robots.txt",
+    "Status": 200
+  },
+  {
+    "Path": "/sitemap.xml",
+    "Status": 200
+  }
+]

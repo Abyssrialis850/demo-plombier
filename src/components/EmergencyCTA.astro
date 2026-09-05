@@ -1,0 +1,5 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+<section class="emergency"><div class="container emergency-inner"><span class="emergency-symbol" aria-hidden="true">↗</span><div><h2>Une fuite ? Une panne ?</h2><p>Le plus simple, c’est d’en parler directement.</p></div><a href={site.phoneHref} class="emergency-link"><span>Appeler maintenant<small>{site.phone} · numéro de démonstration</small></span><Icon name="phone" /></a></div></section>

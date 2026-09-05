@@ -1,0 +1,15 @@
+---
+import { Picture } from 'astro:assets';
+import { services } from '../data/site';
+import { images } from '../data/images';
+import Icon from './Icon.astro';
+---
+<section id="expertise" class="services dark-section section-space">
+  <div class="container">
+    <div class="section-heading" data-reveal><div><p class="eyebrow"><span class="section-number">02 /</span> Nos expertises</p><h2>Des solutions pensées<br />pour <em>votre maison.</em></h2></div><p>Du geste essentiel au projet d’ensemble,<br />la même attention à chaque intervention.</p></div>
+    <div class="services-layout">
+      <div class="services-visual" aria-hidden="true" data-reveal>{services.map((service,i) => <div class:list={['service-image', { 'is-active': i === 0 }]} data-service-image={service.id}><Picture src={images[service.image]} alt="" widths={[480,720,960]} sizes="(max-width: 700px) 90vw, 43vw" fallbackFormat="webp" formats={['avif','webp']} loading="lazy" /><span class="service-image-caption">Maison Ardent <span>—</span> {service.title}</span></div>)}</div>
+      <div class="services-list" data-reveal>{services.map((service,i) => <details class="service-row" name="expertises" open={i === 0} data-service={service.id}><summary><span class="service-number">{service.number}</span><h3>{service.title}</h3><Icon name="plus" /></summary><div class="service-detail"><p class="service-intro">{service.detail}</p><p>{service.description}</p><span class="service-tags">{service.tags}</span><a class="text-link light-link" href={`/contact?mode=devis&service=${service.id}`}>Découvrir {service.title === 'Plomberie' ? 'la plomberie' : service.title === 'Chauffage' ? 'le chauffage' : service.title === 'Salle de bain' ? 'nos salles de bain' : 'nos interventions'} <Icon /></a></div></details>)}</div>
+    </div>
+  </div>
+</section>

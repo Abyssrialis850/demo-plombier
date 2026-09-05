@@ -1,0 +1,16 @@
+{
+  "pages": 6,
+  "internalLinksChecked": 200,
+  "imageInstancesChecked": 23,
+  "javascript": {
+    "files": 1,
+    "bytes": 8425,
+    "gzipBytes": 2862
+  },
+  "css": {
+    "files": 1,
+    "bytes": 52344,
+    "gzipBytes": 14495
+  },
+  "status": "PASS"
+}

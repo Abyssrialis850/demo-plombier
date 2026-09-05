@@ -1,0 +1,52 @@
+---
+import '@fontsource/instrument-serif/latin-400.css';
+import '@fontsource/instrument-serif/latin-400-italic.css';
+import '@fontsource-variable/manrope';
+import serifFont from '@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2?url';
+import sansFont from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
+import '../styles/global.css';
+import '../styles/sections.css';
+import '../styles/forms.css';
+import '../styles/responsive.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobileCTA from '../components/StickyMobileCTA.astro';
+import { site } from '../data/site';
+interface Props { title?: string; description?: string; overlay?: boolean; }
+const { title = 'Maison Ardent — Plombier chauffagiste à Vichy', description = 'Plomberie, chauffage et rénovation de salle de bain à Vichy, Cusset et Bellerive-sur-Allier. Maison Ardent, le confort maîtrisé jusque dans les détails.', overlay = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const schema = { '@context': 'https://schema.org', '@type': 'WebSite', name: site.name, url: Astro.site, description: site.demo ? 'Démonstration de site pour une entreprise fictive de plomberie et chauffage.' : description, inLanguage: 'fr-FR' };
+---
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#25241f" />
+    <meta name="robots" content={site.demo ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href={serifFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={sansFont} as="font" type="font/woff2" crossorigin />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Maison Ardent" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/og-maison-ardent.jpg', Astro.site)} />
+    <meta property="og:image:alt" content="Maison Ardent, intérieur en pierre naturelle et robinetterie cuivrée" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+    <Header overlay={overlay} />
+    <main id="main"><slot /></main>
+    <Footer />
+    <StickyMobileCTA />
+    <script>import '../scripts/site';</script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+
+> maison-ardent@1.0.0 build
+> astro check && astro build
+
+17:58:03 [types] Generated 79ms
+17:58:03 [check] Getting diagnostics for Astro files in C:\Users\valen\Documents\Codex\maison-ardent...
+Result (35 files): 
+- 0 errors
+- 0 warnings
+- 0 hints
+
+17:58:07 [types] Generated 66ms
+17:58:07 [build] output: "static"
+17:58:07 [build] mode: "static"
+17:58:07 [build] directory: C:\Users\valen\Documents\Codex\maison-ardent\dist\
+17:58:07 [build] Collecting build info...
+17:58:07 [build] ✓ Completed in 97ms.
+17:58:07 [build] Building static entrypoints...
+17:58:08 [vite] ✓ built in 265ms
+17:58:08 [vite] ✓ built in 40ms
+17:58:08 [build] Rearranging server assets...
+
+ generating static routes 
+17:58:08   ├─ /404.html (+15ms) 
+17:58:08   ├─ /confidentialite/index.html (+5ms) 
+17:58:08   ├─ /contact/index.html (+6ms) 
+17:58:08   ├─ /mentions-legales/index.html (+4ms) 
+17:58:08   ├─ /realisations/index.html (+16ms) 
+17:58:08   ├─ /robots.txt (+3ms) 
+17:58:08   ├─ /sitemap.xml (+5ms) 
+17:58:08   ├─ /index.html (+19ms) 
+17:58:08 ✓ Completed in 86ms.
+
+ generating optimized images 
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_Z15Vlsd.avif (reused cache entry) (+2ms) (1/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_2qYOYO.webp (reused cache entry) (+2ms) (2/56)
+17:58:08   ▶ /_astro/before.C-bvW6Gu_NINFB.avif (reused cache entry) (+2ms) (3/56)
+17:58:08   ▶ /_astro/heating.DEoxp_Ci_ZuosVa.webp (reused cache entry) (+2ms) (4/56)
+17:58:08   ▶ /_astro/detail.C91BfPqv_Z1TUelQ.webp (reused cache entry) (+3ms) (5/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_10Kajh.avif (reused cache entry) (+1ms) (6/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_ZMLN4s.avif (reused cache entry) (+2ms) (7/56)
+17:58:08   ▶ /_astro/detail.C91BfPqv_1I3m8J.avif (reused cache entry) (+1ms) (8/56)
+17:58:08   ▶ /_astro/heating.DEoxp_Ci_Z15tkXP.avif (reused cache entry) (+2ms) (9/56)
+17:58:08   ▶ /_astro/before.C-bvW6Gu_Z2acQO8.avif (reused cache entry) (+2ms) (10/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_Z19zMf8.avif (reused cache entry) (+2ms) (11/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_Z1TfAB2.avif (reused cache entry) (+3ms) (12/56)
+17:58:08   ▶ /_astro/detail.C91BfPqv_Z17GCtV.avif (reused cache entry) (+3ms) (13/56)
+17:58:08   ▶ /_astro/heating.DEoxp_Ci_ZHbLoa.avif (reused cache entry) (+3ms) (14/56)
+17:58:08   ▶ /_astro/before.C-bvW6Gu_vWEeC.avif (reused cache entry) (+3ms) (15/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_17i532.avif (reused cache entry) (+2ms) (16/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_drD8G.webp (reused cache entry) (+2ms) (17/56)
+17:58:08   ▶ /_astro/detail.C91BfPqv_Z10UIA3.avif (reused cache entry) (+1ms) (18/56)
+17:58:08   ▶ /_astro/heating.DEoxp_Ci_Z1fK5Mk.avif (reused cache entry) (+1ms) (19/56)
+17:58:08   ▶ /_astro/before.C-bvW6Gu_Z1YfNyL.webp (reused cache entry) (+2ms) (20/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_vBbwr.webp (reused cache entry) (+2ms) (21/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_2k99Ub.webp (reused cache entry) (+2ms) (22/56)
+17:58:08   ▶ /_astro/detail.C91BfPqv_Z14Vg6D.webp (reused cache entry) (+2ms) (23/56)
+17:58:08   ▶ /_astro/heating.DEoxp_Ci_Z1wTjRD.webp (reused cache entry) (+2ms) (24/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_9NclL.webp (reused cache entry) (+2ms) (25/56)
+17:58:08   ▶ /_astro/before.C-bvW6Gu_6YDJq.webp (reused cache entry) (+2ms) (26/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_Z1IDWoy.webp (reused cache entry) (+2ms) (27/56)
+17:58:08   ▶ /_astro/detail.C91BfPqv_Z1z7BnJ.webp (reused cache entry) (+2ms) (28/56)
+17:58:08   ▶ /_astro/heating.DEoxp_Ci_Z19BKhX.webp (reused cache entry) (+2ms) (29/56)
+17:58:08   ▶ /_astro/before.C-bvW6Gu_4wFkO.webp (reused cache entry) (+2ms) (30/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_2qG4DV.webp (reused cache entry) (+2ms) (31/56)
+17:58:08   ▶ /_astro/detail.C91BfPqv_Z1slHtQ.webp (reused cache entry) (+2ms) (32/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_jtiUi.avif (reused cache entry) (+2ms) (33/56)
+17:58:08   ▶ /_astro/heating.DEoxp_Ci_Z1Hb4G8.webp (reused cache entry) (+2ms) (34/56)
+17:58:08   ▶ /_astro/before.C-bvW6Gu_1M0PWX.webp (reused cache entry) (+2ms) (35/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_Z18yICs.webp (reused cache entry) (+2ms) (36/56)
+17:58:08   ▶ /_astro/detail.C91BfPqv_Zj6faq.webp (reused cache entry) (+2ms) (37/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_BT5r6.webp (reused cache entry) (+2ms) (38/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_ZYoqIs.avif (reused cache entry) (+2ms) (39/56)
+17:58:08   ▶ /_astro/heating.DEoxp_Ci_Z1qtvt4.webp (reused cache entry) (+3ms) (40/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_ZRItJy.webp (reused cache entry) (+1ms) (41/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_1psI8l.avif (reused cache entry) (+1ms) (42/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_ZTjHNd.avif (reused cache entry) (+1ms) (43/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_Z1g7GXS.avif (reused cache entry) (+1ms) (44/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_jYxRr.webp (reused cache entry) (+1ms) (45/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_p4gMG.webp (reused cache entry) (+1ms) (46/56)
+17:58:08   ▶ /_astro/workshop.CD5aAVgb_1A4mkO.webp (reused cache entry) (+1ms) (47/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_3ghC1.webp (reused cache entry) (+1ms) (48/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_2ax96S.avif (reused cache entry) (+1ms) (49/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_yvLXP.avif (reused cache entry) (+1ms) (50/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_sxSMk.avif (reused cache entry) (+1ms) (51/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_Z1lgSHQ.avif (reused cache entry) (+1ms) (52/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_1wtBAR.webp (reused cache entry) (+1ms) (53/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_Z4wJwb.webp (reused cache entry) (+1ms) (54/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_WxWiy.webp (reused cache entry) (+1ms) (55/56)
+17:58:08   ▶ /_astro/bathroom.CPPKKHSs_Z1lPxix.webp (reused cache entry) (+1ms) (56/56)
+17:58:08 ✓ Completed in 31ms.
+
+17:58:08 [build] ✓ Completed in 483ms.
+17:58:08 [build] 6 page(s) built in 593ms
+17:58:08 [build] Complete!

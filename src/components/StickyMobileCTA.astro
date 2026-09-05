@@ -1,0 +1,5 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+<nav class="sticky-mobile-cta" aria-label="Contact rapide"><a href={site.phoneHref}><Icon name="phone" /> Appeler</a><a href="/contact?mode=rdv">Prendre RDV <Icon /></a></nav>

@@ -1,0 +1,5 @@
+---
+import { testimonials } from '../data/site';
+import Icon from './Icon.astro';
+---
+<section id="avis" class="testimonials section-space"><div class="container"><div class="section-heading" data-reveal><div><p class="eyebrow"><span class="section-number">07 /</span> La confiance, simplement</p><h2>Ils nous confient<br /><em>leur intérieur.</em></h2></div><div class="review-score"><span class="stars">{[1,2,3,4,5].map(()=><Icon name="star" />)}</span><strong>4,9<span>/5</span></strong><span>67 avis Google · Illustration fictive</span></div></div><div class="testimonials-grid">{testimonials.map(t=><figure data-reveal><span class="quote-mark" aria-hidden="true">“</span><blockquote>{t.quote}</blockquote><figcaption><strong>{t.name} <span>· {t.city}</span></strong><span>{t.service}</span></figcaption></figure>)}</div><p class="demo-inline">Témoignages et note fictifs, rédigés pour cette démonstration.</p></div></section>
